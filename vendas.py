@@ -32,4 +32,17 @@ def leitura_func():
     print(codigo)
     arq.close()
 
+#-----------------------------------------------------------------------
+def add_med():
+    arq= open("Estoque.txt", "a")
+    medicamento=input("DIGITE O MEDICAMENTO: ")
+    receita=input("ESSE MEDICAMNTO PRECISA DE RECEITA ? [S/N]")
+    if receita == "s" or receita == "S":
+        arq=open("MedicamentosReceitas.txt", "a")
+        print(medicamento, file = arq)
+        print("MEDICAMENTO ADICIONADO)
+    else:
+        print("MEDICAMENTO ADICIONADO)
+
+(add_med())
     
