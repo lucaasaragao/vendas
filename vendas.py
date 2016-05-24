@@ -11,13 +11,12 @@ def menu():
     op=input("DIGITE SUA OPÇÃO: \n")
     return op
 
-def add_func(funcionarios,codigo):
-    nome=input("DIGITE O NOME DO FUNCIONARIO: \n")
-    codigo=codigo+1
-    funcionarios.append(nome,codigo)
-    return cod_func
-    
-funcionarios=[]
-cod_func=0
-op=menu()
-add_func(funcionarios,cod_func)
+def add_func():
+    arq= open("Cdastro.txt", "a")
+    funcionario=input("DIGITE SEU NOME: ")
+    codigo=int(input("DIGITE SEU CODIGO: "))
+    print(funcionario, file = arq)
+    print(codigo, file = arq)
+    arq.close()
+
+(add_func())
