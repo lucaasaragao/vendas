@@ -11,28 +11,26 @@ def menu():
     op=input("DIGITE SUA OPÇÃO: \n")
     return op
 
-(menu())
-#-------------------------------------------------------------------
+
 def add_func():
     arq= open("Cadastro.txt", "a")
     funcionario=input("DIGITE SEU NOME: ")
     codigo=int(input("DIGITE SEU CODIGO: "))
-    print(funcionario, file = arq)
-    print(codigo, file = arq)
+    print("%s;%s" % (codigo,funcionario), file = arq)
     arq.close()
 
-(add_func())
 
-#----------------------------------------------------------------------
 def leitura_func():
     arq = open("Cadastro.txt", "r")
-    funcionario = arq.read()
-    codigo = arq.read()
-    print(funcionario)
-    print(codigo)
+    funcionarios = arq.readlines()
+    for funcionario in funcionarios:
+        func = funcionario.split(";")
+        cod = func[0]
+        nome = func[1]
+        print(cod,nome)
     arq.close()
 
-#-----------------------------------------------------------------------
+'''
 def add_med():
     arq= open("Estoque.txt", "a")
     medicamento=input("DIGITE O MEDICAMENTO: ")
@@ -43,6 +41,10 @@ def add_med():
         print("MEDICAMENTO ADICIONADO)
     else:
         print("MEDICAMENTO ADICIONADO)
+'''
 
-(add_med())
-    
+while continua:
+    opcao = menu()
+    if opcao == "1":
+        #blah balh
+    # ...
