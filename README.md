@@ -1,2 +1,0 @@
-# vendas
-Projeto de IP 
